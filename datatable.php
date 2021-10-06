@@ -21,8 +21,14 @@
                 <td><?= $nilai['username'] ?></td>
                 <td><?= $nilai['password'] ?></td>
                 <td>
-                    <button type="button" class="btn btn-warning btn-sm">Edit</button>
-                    <button type="button" class="btn btn-danger btn-sm">Hapus</button>
+                    <button onclick="edit(
+                        '<?= $nilai['id_user'] ?>',
+                        '<?= $nilai['nama'] ?>',
+                        '<?= $nilai['username'] ?>',
+                        '<?= $nilai['password'] ?>'
+                    )" type="button" class="btn btn-warning btn-sm">Edit</button>
+                    
+                    <button onclick="hapus('<?= $nilai['id_user'] ?>')" type="button" class="btn btn-danger btn-sm">Hapus</button>
                 </td>
             </tr>
 

@@ -46,6 +46,9 @@
 
                 <!-- Modal body -->
                 <div class="modal-body">
+
+                    <input type="hidden" id="id_user">
+                    
                     <div class="form-group">
                         <label for="">Nama</label>
                         <input type="text" id="nama" class="form-control" placeholder="Nama">
@@ -70,51 +73,7 @@
         </div>
     </div>
 
-    <script>
-
-        $(document).ready(function(){
-            $('#isitabel').load('datatable.php')
-        })
-
-        function buka()
-        {
-            $('#forminput').modal('show');
-        }
-
-        function simpan()
-        {
-            var nama = $('#nama').val();
-            var username = $('#username').val();
-            var password = $('#password').val();
-            // cara kerja ajax
-            $.ajax({
-                url: 'simpan.php',
-                type: 'POST',
-                dataType: 'JSON',
-                data: {
-                    'nama': nama,
-                    'username': username,
-                    'password': password
-                },
-                success: function(data)
-                {
-                    console.log(data.pesan);
-                    if(data.pesan == "berhasil")
-                    {
-                        kosong()
-                    }
-                }
-            })
-        }
-
-        function kosong()
-        {
-            $('#nama').val('')
-            $('#username').val('')
-            $('#password').val('')
-            $('#forminput').modal('hide')
-        }
-    </script>
+    <script src="app.js"></script>
 
 </body>
 
